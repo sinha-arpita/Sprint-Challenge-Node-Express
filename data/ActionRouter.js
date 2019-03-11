@@ -44,7 +44,6 @@ ActionRouter.post("/", async(req,res)=>{
     try{
 
         const newAction = req.body;
-        console.log("NewAction : ", newAction)
         if(newAction.project_id ){
             const project=await projectDb.get(newAction.project_id )
             if (project == null) {
@@ -61,7 +60,6 @@ ActionRouter.post("/", async(req,res)=>{
              res.status(400).json({message:"Project id doesn't exist"})
         }
     }catch(error){
-        console.log(error)
         res.status(500).json({message:"Can't insert the new action in the database"})
     }
 })

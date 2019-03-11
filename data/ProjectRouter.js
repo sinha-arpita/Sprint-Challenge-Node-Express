@@ -3,14 +3,11 @@ const ProjectRouter=express.Router();
 const projectDb=require("./helpers/projectModel.js")
 
 ProjectRouter.get("/",async(req,res)=>{
-    console.log("Query ", req.query);
      try{
          const projects=await projectDb.get();
-         console.log("Got project as ", projects);
          res.status(200).json(projects);
      }
      catch(error){
-         console.log("Error : ", error);
          res.status(500).json({message:error})
      }
 })
@@ -28,7 +25,6 @@ ProjectRouter.get("/:id", async(req,res)=>{
         }
 
     } catch(error){
-       console.log(error);
        res.status(500).json({message:"Can't get the record with the specified id."})
     }
 }
@@ -55,7 +51,6 @@ ProjectRouter.get("/actions/:id", async(req,res)=>{
 ProjectRouter.post("/",async(req,res)=>{
     try{
         const newProject=req.body;
-        console.log("New user " , newProject)
        
             if( typeof newProject.name==="string" && typeof newProject.description ==="string"){
                 const result =await projectDb.insert(newProject)
@@ -66,7 +61,6 @@ ProjectRouter.post("/",async(req,res)=>{
      
 
     } catch(error){
-                console.log(error);
                 res.status(500).json ({error: error})
                 
     }
@@ -106,7 +100,6 @@ ProjectRouter.put("/:id",async(req,res)=>{
      }else{
       }  res.status(400).json(null)
   }catch(error){
-    console.log(error);
     res.status(500).json({error:"Record can't be updated in the database"})
 
   }
