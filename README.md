@@ -1,3 +1,45 @@
+Q1)  Mention two parts of Express that you learned about this week?
+
+Ans     Express is a web application framework that sits on top of the Node.js web server.It has two important features 
+       first is Middleware and second is Routing.
+       MIddleware are functions that get the request and response objects and can operate on them and either return the response or call the next middleware in the pipeline. Examples are logging or securityExpress’ middleware stack is basically an array of functions. Middleware CAN change the request or response, but doesn’t have to. 
+       Routing is  also one of the main features of Express. Using routing we can map incoming requests to the appropriate request handler based on the URL and HTTP Method used.We can have a single URL per resource and execute different code based on the HTTP Method/Verb used. Routing provides a way to break an application into smaller parts based on the route.
+
+Q 2) Describe Middleware?
+Ans. Middleware are basically functions that get the request and response objects and can operate on them and either         return the response or call the next middleware in the pipeline. Examples are logging or security.Express’              middleware stack is basically an array of functions.
+     Middleware CAN change the request or response, but doesn’t have to.
+
+Q3) Describe a Resource?   
+
+Ans. When we design a RESTful WEB API we consider that everything is a resource.where each resource is accessible via a      unique URI.Resources can have multiple representations.
+     communication is done over a stateless protocol (HTTP) and management of resources is done via HTTP methods.
+
+Q4) What can the API return to help clients know if a request was successful?
+Ans.Response status or response code as 200.
+
+Q5) How can we partition our application into sub-applications?
+Ans.Express Routers are a way to split an application into sub-applications to make it more modular and easier to          maintain and reason about.
+   Applications can be broken up into router to reorganize our code for readability. We could have a router to serve our SPA and a router for our API. Each router can have it’s own middleware and routing.
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Sprint Challenge: Express and Node.js - Projects & Actions
 
 This challenge allows you to practice the concepts and techniques learned over the past Sprint and apply them in a concrete project. This Sprint explored Building RESTful Web APIs with Express and Node.js, Server-side Routing, Express Middleware & Deployment and Good Practices. In your challenge for this Sprint, you will demonstrate proficiency by creating an Web API using Node.js and Express.
